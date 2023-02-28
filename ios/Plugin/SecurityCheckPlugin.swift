@@ -15,4 +15,10 @@ public class SecurityCheckPlugin: CAPPlugin {
             "value": implementation.echo(value)
         ])
     }
+
+    @objc func isEmulationDetected(_ call: CAPPluginCall) {
+        call.resolve([
+            "value": implementation.isEmulationDetected()
+        ])
+    }
 }

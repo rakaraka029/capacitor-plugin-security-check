@@ -74,6 +74,5 @@
     "android": {
       "src": "android"
     }
-  },
-  "private": false
+  }
 }

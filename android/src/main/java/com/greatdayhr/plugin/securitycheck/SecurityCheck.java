@@ -1,11 +1,19 @@
 package com.greatdayhr.plugin.securitycheck;
 
-import android.util.Log;
+import android.os.Build;
 
 public class SecurityCheck {
 
-    public String echo(String value) {
-        Log.i("Echo", value);
-        return value;
+    public Boolean isEmulationDetected() {
+        Boolean emulator = Build.FINGERPRINT.startsWith("generic")
+                || Build.FINGERPRINT.startsWith("unknown")
+                || Build.MODEL.contains("google_sdk")
+                || Build.MODEL.contains("Emulator")
+                || Build.MODEL.contains("Android SDK built for x86")
+                || Build.MANUFACTURER.contains("Genymotion")
+                || (Build.BRAND.startsWith("generic") && Build.DEVICE.startsWith("generic"))
+                || "google_sdk".equals(Build.PRODUCT);
+        return emulator;
     }
+    
 }

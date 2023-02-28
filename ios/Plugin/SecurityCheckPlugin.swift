@@ -9,13 +9,6 @@ import Capacitor
 public class SecurityCheckPlugin: CAPPlugin {
     private let implementation = SecurityCheck()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
-    }
-
     @objc func isEmulationDetected(_ call: CAPPluginCall) {
         call.resolve([
             "value": implementation.isEmulationDetected()

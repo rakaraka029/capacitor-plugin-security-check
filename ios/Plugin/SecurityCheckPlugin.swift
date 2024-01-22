@@ -14,4 +14,10 @@ public class SecurityCheckPlugin: CAPPlugin {
             "value": implementation.isEmulationDetected()
         ])
     }
+
+    @objc func isJailbrokenDetected(_ call: CAPPluginCall) {
+        call.resolve([
+            "value": implementation.isJailbrokenDetected()
+        ])
+    }
 }

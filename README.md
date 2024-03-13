@@ -14,6 +14,7 @@ npx cap sync
 <docgen-index>
 
 * [`isEmulationDetected()`](#isemulationdetected)
+* [`isJailbrokenDetected()`](#isjailbrokendetected)
 
 </docgen-index>
 
@@ -24,6 +25,17 @@ npx cap sync
 
 ```typescript
 isEmulationDetected() => Promise<{ value: boolean; }>
+```
+
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
+
+--------------------
+
+
+### isJailbrokenDetected()
+
+```typescript
+isJailbrokenDetected() => Promise<{ value: boolean; }>
 ```
 
 **Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>

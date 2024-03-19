@@ -6,4 +6,6 @@
 CAP_PLUGIN(SecurityCheckPlugin, "SecurityCheck",
            CAP_PLUGIN_METHOD(isEmulationDetected, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(isJailbrokenDetected, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(isReverseEngineeringDetected, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(isTampered, CAPPluginReturnPromise);
 )

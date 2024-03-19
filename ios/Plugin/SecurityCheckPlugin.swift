@@ -20,4 +20,24 @@ public class SecurityCheckPlugin: CAPPlugin {
             "value": implementation.isJailbrokenDetected()
         ])
     }
+
+    @objc func isReverseEngineeringDetected(_ call: CAPPluginCall) {
+        call.resolve([
+            "value": implementation.isReverseEngineeringDetected()
+        ])
+    }
+
+    @objc func isTampered(_ call: CAPPluginCall) {
+        var isTampered:Bool
+        let bundle = call.getString("bundle") ?? ""
+        if implementation.isTampered([.bundleID(bundle)]).result {
+            isTampered = true
+        }
+        else {
+            isTampered = false
+        }
+        call.resolve([
+            "value": isTampered
+        ])
+    }
 }

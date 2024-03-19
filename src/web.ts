@@ -9,4 +9,11 @@ export class SecurityCheckWeb extends WebPlugin implements SecurityCheckPlugin {
   async isJailbrokenDetected(): Promise<{ value: boolean; }> {
     return { value: false };
   }
+  async isReverseEngineeringDetected(): Promise<{ value: boolean; }> {
+    return { value: false };
+  }
+  async isTampered(bundle: string): Promise<{ value: boolean; }> {
+    console.log(bundle);
+    return { value: false };
+  }
 }

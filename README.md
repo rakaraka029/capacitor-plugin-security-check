@@ -15,6 +15,8 @@ npx cap sync
 
 * [`isEmulationDetected()`](#isemulationdetected)
 * [`isJailbrokenDetected()`](#isjailbrokendetected)
+* [`isReverseEngineeringDetected()`](#isreverseengineeringdetected)
+* [`isTampered(...)`](#istampered)
 
 </docgen-index>
 
@@ -37,6 +39,32 @@ isEmulationDetected() => Promise<{ value: boolean; }>
 ```typescript
 isJailbrokenDetected() => Promise<{ value: boolean; }>
 ```
+
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
+
+--------------------
+
+
+### isReverseEngineeringDetected()
+
+```typescript
+isReverseEngineeringDetected() => Promise<{ value: boolean; }>
+```
+
+**Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
+
+--------------------
+
+
+### isTampered(...)
+
+```typescript
+isTampered(bundle: string) => Promise<{ value: boolean; }>
+```
+
+| Param        | Type                |
+| ------------ | ------------------- |
+| **`bundle`** | <code>string</code> |
 
 **Returns:** <code>Promise&lt;{ value: boolean; }&gt;</code>
 

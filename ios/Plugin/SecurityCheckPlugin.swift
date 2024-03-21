@@ -27,17 +27,18 @@ public class SecurityCheckPlugin: CAPPlugin {
         ])
     }
 
+    // Implementasi fungsi isTampered
     @objc func isTampered(_ call: CAPPluginCall) {
-        var isTampered:Bool
         let bundle = call.getString("bundle") ?? ""
-        if implementation.isTampered([.bundleID(bundle)]).result {
-            isTampered = true
-        }
-        else {
-            isTampered = false
-        }
-        call.resolve([
-            "value": isTampered
-        ])
+        let checks: NSArray = ["bundleID(\(bundle))"] // Menggunakan NSArray dengan string sebagai elemennya
+
+        // Memanggil fungsi isTampered dengan parameter NSArray
+        let isTampered = implementation.isTampered(checks)
+
+        // Mendapatkan nilai result dari tuple yang dikembalikan
+        let resultValue = isTampered["result"] as? Bool ?? false
+
+        // Mengirimkan hasil resolusi ke pemanggil
+        call.resolve(["value": resultValue])
     }
 }
